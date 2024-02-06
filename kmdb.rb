@@ -94,15 +94,26 @@ studio.save
 
 #input data for movies
 
-
+movie = Movie.new
+movie["title"] = "Batman Begins"
+movie["year_released"] = 2005
+movie["rated"] = "PG 13"
+movie["studio_id"] = 1
+movie.save
 
 #input data for actors
 
-
+actor = Actor.new
+actor["name"] = "Christian Bale"
+actor.save
 
 #input data for roles
 
-
+role = Role.new
+role["movie_id"] = 1
+role["actor_id"] = 1
+role["character_name"] = "Bruce Wayne"
+role.save
 
 
 # Prints a header for the movies output
@@ -123,4 +134,6 @@ puts ""
 # TODO!
 
 
+
+# Tests
 puts "Studios: #{Studio.all.count}"
