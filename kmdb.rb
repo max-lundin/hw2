@@ -80,10 +80,30 @@ role.destroy_all
 # TODO!
 
 #Completed and migrated
+#I realize my model names are not capitalized.....
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+#input data for studios
+
+warner_bros = Studio.new
+warner_bros.name = "Warner Bros."
+warner_bros.save
+
+#input data for movies
+
+
+
+#input data for actors
+
+
+
+#input data for roles
+
+
+
 
 # Prints a header for the movies output
 puts "Movies"
@@ -101,3 +121,6 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+
+puts warner_bros.name
