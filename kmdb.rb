@@ -71,10 +71,10 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
-studio.destroy_all
-movie.destroy_all
-actor.destroy_all
-role.destroy_all
+Studio.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
@@ -88,9 +88,9 @@ role.destroy_all
 
 #input data for studios
 
-warner_bros = Studio.new
-warner_bros.name = "Warner Bros."
-warner_bros.save
+studio = Studio.new
+studio["name"] = "Warner Bros."
+studio.save
 
 #input data for movies
 
@@ -123,4 +123,4 @@ puts ""
 # TODO!
 
 
-puts warner_bros.name
+puts "Studios: #{Studio.all.count}"
