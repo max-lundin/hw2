@@ -71,13 +71,15 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
-studios.destroy_all
-movies.destroy_all
-actors.destroy_all
-roles.destroy_all
+studio.destroy_all
+movie.destroy_all
+actor.destroy_all
+role.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
+
+#Completed and migrated
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
