@@ -101,6 +101,23 @@ movie["rated"] = "PG 13"
 movie["studio_id"] = 1
 movie.save
 
+movie = Movie.new
+movie["title"] = "The Dark Knight"
+movie["year_released"] = 2008
+movie["rated"] = "PG 13"
+movie["studio_id"] = 1
+movie.save
+
+
+movie = Movie.new
+movie["title"] = "Batman Begins"
+movie["year_released"] = 2012
+movie["rated"] = "PG 13"
+movie["studio_id"] = 1
+movie.save
+
+
+
 #input data for actors
 
 actor = Actor.new
@@ -136,4 +153,4 @@ puts ""
 
 
 # Tests
-puts "Studios: #{Studio.all.count}"
+puts "Movies: #{Movie.all.count}"
