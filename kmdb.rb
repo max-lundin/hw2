@@ -302,8 +302,9 @@ roles = Role.all
 for role in roles
     character = role["character_name"]
     #need movie title - have character point to this
+    movie = Movie.find_by({"id" => role["movie_id"]})
     #need actor name - have character point to this
-    puts "#{character.ljust(30)}"
+    puts "#{character.ljust(30)}#{movie}"
 end
 
 
