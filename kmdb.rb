@@ -98,21 +98,21 @@ movie = Movie.new
 movie["title"] = "Batman Begins"
 movie["year_released"] = 2005
 movie["rated"] = "PG 13"
-movie["studio_id"] = 1
+movie["studio_id"] = studio
 movie.save
 
 movie = Movie.new
 movie["title"] = "The Dark Knight"
 movie["year_released"] = 2008
 movie["rated"] = "PG 13"
-movie["studio_id"] = 1
+movie["studio_id"] = studio
 movie.save
 
 movie = Movie.new
 movie["title"] = "The Dark Knight Rises"
 movie["year_released"] = 2012
 movie["rated"] = "PG 13"
-movie["studio_id"] = 1
+movie["studio_id"] = studio
 movie.save
 
 
@@ -289,6 +289,8 @@ puts ""
 
 
 
+#This version didn't work
+
 #for role in roles
 
 #roles = Role.all
@@ -304,7 +306,8 @@ for role in roles
     #need movie title - have character point to this
     movie = Movie.find_by({"id" => role["movie_id"]})
     #need actor name - have character point to this
-    puts "#{character.ljust(30)}#{movie}"
+    actor = Actor.find_by({"id" => role["actor_id"]})
+    puts "#{character.ljust(30)}#{movie}#{actor}"
 end
 
 
@@ -314,7 +317,6 @@ end
 #roles = Role.all
 #I believe that the character name is the unique identifier...so for each character, list the actor and movie
 
-
 #This didn't work
 #roles.each do |role|
  #   movie = Movie.find_by(id: role.movie_id)
@@ -322,8 +324,6 @@ end
    # if movie && actor
     #  puts "- #{movie.title.ljust(30)} #{actor.name.ljust(25)} #{role.character_name}"
   #end
-#do I have to point to the characters in the movie?
-
 
 # Tests
 puts "Roles: #{Role.all.count}"
