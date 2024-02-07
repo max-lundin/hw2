@@ -275,7 +275,7 @@ movies = Movie.all
 for movie in movies
     title = movie["title"]
     year = movie["year_released"]
-    puts "-#{title.ljust(30)}#{year}"
+    puts "#{title.ljust(30)}#{year}"
 end
 
 # Prints a header for the cast output
@@ -289,23 +289,37 @@ puts ""
 
 
 
-for role in roles
+#for role in roles
 
-actor = Actor.find_by({"id" => role["actor_id"]})
-puts "#{Role.all.count}"
+#roles = Role.all
+
+#actor = Actor.find_by({"id" => role["actor_id"]})
+#puts "#{Role.all.count}"
+#end
+
+roles = Role.all
+
+for role in roles
+    character = role["character_name"]
+    #need movie title - have character point to this
+    #need actor name - have character point to this
+    puts "#{character.ljust(30)}"
+end
+
+
 
 
 
 #roles = Role.all
+#I believe that the character name is the unique identifier...so for each character, list the actor and movie
 
+
+#This didn't work
 #roles.each do |role|
  #   movie = Movie.find_by(id: role.movie_id)
   #  actor = Actor.find_by(id: role.actor_id)
    # if movie && actor
     #  puts "- #{movie.title.ljust(30)} #{actor.name.ljust(25)} #{role.character_name}"
-    #else
-     # puts "Missing movie or actor for role ID #{role.id}"
-    #end
   #end
 #do I have to point to the characters in the movie?
 
