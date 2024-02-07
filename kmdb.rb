@@ -288,9 +288,17 @@ puts ""
 # TODO!
 
 roles = Role.all
-for role.movies_id in roles
-    title = roles[1]
 
+roles.each do |role|
+    movie = Movie.find_by(id: role.movie_id)
+    actor = Actor.find_by(id: role.actor_id)
+    if movie && actor
+      puts "- #{movie.title.ljust(30)} #{actor.name.ljust(25)} #{role.character_name}"
+    else
+      puts "Missing movie or actor for role ID #{role.id}"
+    end
+  end
+#do I have to point to the characters in the movie?
 
 
 # Tests
