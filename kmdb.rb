@@ -98,21 +98,21 @@ movie = Movie.new
 movie["title"] = "Batman Begins"
 movie["year_released"] = 2005
 movie["rated"] = "PG 13"
-movie["studio_id"] = studio
+movie["studio_id"] = studio.id
 movie.save
 
 movie = Movie.new
 movie["title"] = "The Dark Knight"
 movie["year_released"] = 2008
 movie["rated"] = "PG 13"
-movie["studio_id"] = studio
+movie["studio_id"] = studio.id
 movie.save
 
 movie = Movie.new
 movie["title"] = "The Dark Knight Rises"
 movie["year_released"] = 2012
 movie["rated"] = "PG 13"
-movie["studio_id"] = studio
+movie["studio_id"] = studio.id
 movie.save
 
 
@@ -275,8 +275,12 @@ movies = Movie.all
 for movie in movies
     title = movie["title"]
     year = movie["year_released"]
-    puts "#{title.ljust(30)}#{year}"
+    #studio = Studio.find(movie["studio_id"])
+    puts "#{title.ljust(30)}#{year}#{studio["name"]}"
 end
+
+
+#studio is an association test
 
 # Prints a header for the cast output
 puts ""
