@@ -97,21 +97,21 @@ studio.save
 movie = Movie.new
 movie["title"] = "Batman Begins"
 movie["year_released"] = 2005
-movie["rated"] = "PG 13"
+movie["rated"] = "PG-13"
 movie["studio_id"] = studio.id
 movie.save
 
 movie = Movie.new
 movie["title"] = "The Dark Knight"
 movie["year_released"] = 2008
-movie["rated"] = "PG 13"
+movie["rated"] = "PG-13"
 movie["studio_id"] = studio.id
 movie.save
 
 movie = Movie.new
 movie["title"] = "The Dark Knight Rises"
 movie["year_released"] = 2012
-movie["rated"] = "PG 13"
+movie["rated"] = "PG-13"
 movie["studio_id"] = studio.id
 movie.save
 
@@ -274,13 +274,16 @@ puts ""
 
 movies = Movie.all
 
-for movie in movies
+movies.each do |movie|
     title = movie["title"]
-    year = movie["year_released"]
-    #studio = Studio.find(movie["studio_id"])
-    puts "#{title.ljust(30)}#{year}"
+    year = movie["year_released"].to_s
+    rated = movie["rated"]
+    studio_name = Studio.find(movie["studio_id"])["name"]
+
+    puts "#{title.ljust(30)} #{year.ljust(6)} #{rated.ljust(9)} #{studio_name}"
 end
 
+movie["rated"] = "PG 13"
 
 #studio is an association test
 
