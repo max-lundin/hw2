@@ -80,7 +80,7 @@ Role.destroy_all
 # TODO!
 
 #Completed and migrated
-#I realize my model names are not capitalized.....
+#File.rb names not capitalized for some reason.....
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
@@ -109,7 +109,7 @@ movie["studio_id"] = 1
 movie.save
 
 movie = Movie.new
-movie["title"] = "Batman Begins"
+movie["title"] = "The Dark Knight Rises"
 movie["year_released"] = 2012
 movie["rated"] = "PG 13"
 movie["studio_id"] = 1
@@ -269,6 +269,15 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
+
+movies = Movie.all
+
+for movie in movies
+    title = movie["title"]
+    year = movie["year_released"]
+    puts "-#{title.ljust(30)}#{year}"
+end
+
 # Prints a header for the cast output
 puts ""
 puts "Top Cast"
@@ -278,7 +287,11 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
 
+roles = Role.all
+for role.movies_id in roles
+    title = roles[1]
+
 
 
 # Tests
-puts "Movies: #{Movie.all.count}"
+puts "Roles: #{Role.all.count}"
