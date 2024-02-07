@@ -115,7 +115,7 @@ movie["rated"] = "PG 13"
 movie["studio_id"] = studio.id
 movie.save
 
-#Actor list
+#Actor list Batman Begins
 
 christian_bale = Actor.new
 christian_bale["name"] = "Christian Bale"
@@ -137,6 +137,8 @@ gary_oldman = Actor.new
 gary_oldman["name"] = "Gary Oldman"
 gary_oldman.save
 
+#Actor list The Dark Knight
+
 heath_ledger = Actor.new
 heath_ledger["name"] = "Heath Ledger"
 heath_ledger.save
@@ -148,6 +150,8 @@ aaron_eckhart.save
 maggie_gyllenhaal = Actor.new
 maggie_gyllenhaal["name"] = "Maggie Gyllenhaal"
 maggie_gyllenhaal.save
+
+#Actor list The Dark Knight Rises
 
 tom_hardy = Actor.new
 tom_hardy["name"] = "Tom Hardy"
@@ -274,7 +278,7 @@ for movie in movies
     title = movie["title"]
     year = movie["year_released"]
     #studio = Studio.find(movie["studio_id"])
-    puts "#{title.ljust(30)}#{year}#{studio["name"]}"
+    puts "#{title.ljust(30)}#{year}"
 end
 
 
@@ -289,29 +293,6 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
 
-
-
-#This version didn't work
-
-#for role in roles
-
-#roles = Role.all
-
-#actor = Actor.find_by({"id" => role["actor_id"]})
-#puts "#{Role.all.count}"
-#end
-
-#roles = Role.all
-
-#for #role in roles
-    #character = role["character_name"]
-    #need movie title - have character point to this
-    #movie = Movie.find_by({"id" => role["movie_id"]})
-    #need actor name - have character point to this
-    #actor = Actor.find_by({"id" => role["actor_id"]})
-    #puts "#{character.ljust(30)}#{movie}#{actor}"
-#end
-
 roles = Role.all
 
 roles.each do |role|
@@ -322,10 +303,6 @@ roles.each do |role|
 end
 
 
-
-#roles = Role.all
-#I believe that the character name is the unique identifier...so for each character, list the actor and movie
-
 #This didn't work
 #roles.each do |role|
  #   movie = Movie.find_by(id: role.movie_id)
@@ -334,5 +311,17 @@ end
     #  puts "- #{movie.title.ljust(30)} #{actor.name.ljust(25)} #{role.character_name}"
   #end
 
+  #This almost worked
+#roles = Role.all
+#for #role in roles
+    #character = role["character_name"]
+    #need movie title - have character point to this
+    #movie = Movie.find_by({"id" => role["movie_id"]})
+    #need actor name - have character point to this
+    #actor = Actor.find_by({"id" => role["actor_id"]})
+    #puts "#{character.ljust(30)}#{movie}#{actor}"
+#end
+
+
 # Tests
-puts "Roles: #{Role.all.count}"
+#puts "Roles: #{Role.all.count}"
