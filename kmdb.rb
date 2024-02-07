@@ -287,17 +287,26 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
 
-roles = Role.all
 
-roles.each do |role|
-    movie = Movie.find_by(id: role.movie_id)
-    actor = Actor.find_by(id: role.actor_id)
-    if movie && actor
-      puts "- #{movie.title.ljust(30)} #{actor.name.ljust(25)} #{role.character_name}"
-    else
-      puts "Missing movie or actor for role ID #{role.id}"
-    end
-  end
+
+for role in roles
+
+actor = Actor.find_by({"id" => role["actor_id"]})
+puts "#{Role.all.count}"
+
+
+
+#roles = Role.all
+
+#roles.each do |role|
+ #   movie = Movie.find_by(id: role.movie_id)
+  #  actor = Actor.find_by(id: role.actor_id)
+   # if movie && actor
+    #  puts "- #{movie.title.ljust(30)} #{actor.name.ljust(25)} #{role.character_name}"
+    #else
+     # puts "Missing movie or actor for role ID #{role.id}"
+    #end
+  #end
 #do I have to point to the characters in the movie?
 
 
