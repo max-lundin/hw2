@@ -120,23 +120,23 @@ movie.save
 #Batman Begins Casting
 
 actor = Actor.new
-actor["name"] = "Christian Bale"
+actor["name"] = "Christian Bale" #1
 actor.save
 
 actor = Actor.new
-actor["name"] = "Michael Caine"
+actor["name"] = "Michael Caine" #2
 actor.save
 
 actor = Actor.new
-actor["name"] = "Liam Neeson"
+actor["name"] = "Liam Neeson" #3
 actor.save
 
 actor = Actor.new
-actor["name"] = "Katie Holmes"
+actor["name"] = "Katie Holmes" #4
 actor.save
 
 actor = Actor.new
-actor["name"] = "Gary Oldman"
+actor["name"] = "Gary Oldman" #5
 actor.save
 
 role = Role.new
@@ -172,47 +172,93 @@ role.save
 
 #The Dark Knight Casting
 
+actor = Actor.new
+actor["name"] = "Heath Ledger" #6
+actor.save
 
+actor = Actor.new
+actor["name"] = "Aaron Eckhart" #7
+actor.save
+
+actor = Actor.new
+actor["name"] = "Maggie Gyllenhaal" #8
+actor.save
+
+
+role = Role.new
+role["movie_id"] = 2
+role["actor_id"] = 1
+role["character_name"] = "Bruce Wayne"
+role.save
+
+role = Role.new
+role["movie_id"] = 2
+role["actor_id"] = 6
+role["character_name"] = "Joker"
+role.save
+
+role = Role.new
+role["movie_id"] = 2
+role["actor_id"] = 7
+role["character_name"] = "Harvey Dent"
+role.save
+
+role = Role.new
+role["movie_id"] = 2
+role["actor_id"] = 2
+role["character_name"] = "Alfred"
+role.save
+
+role = Role.new
+role["movie_id"] = 2
+role["actor_id"] = 8
+role["character_name"] = "Rachel Dawes"
+role.save
 
 #The Dark Knight Rises Casting
 
+actor = Actor.new
+actor["name"] = "Tom Hardy" #9
+actor.save
+
+actor = Actor.new
+actor["name"] = "Joseph Gordon-Levitt" #10
+actor.save
+
+actor = Actor.new
+actor["name"] = "Anne Hathaway" #11
+actor.save
 
 
+role = Role.new
+role["movie_id"] = 3
+role["actor_id"] = 1
+role["character_name"] = "Bruce Wayne"
+role.save
 
--- Batman Begins
-INSERT INTO actors (name) VALUES ("Christian Bale"); -- 1
-INSERT INTO actors (name) VALUES ("Michael Caine"); -- 2
-INSERT INTO actors (name) VALUES ("Liam Neeson");  -- 3
-INSERT INTO actors (name) VALUES ("Katie Holmes");  -- 4
-INSERT INTO actors (name) VALUES ("Gary Oldman");  -- 5
+role = Role.new
+role["movie_id"] = 3
+role["actor_id"] = 5
+role["character_name"] = "Commissioner Gordon"
+role.save
 
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 1, "Bruce Wayne");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 2, "Alfred");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 3, "Ra's Al Ghul");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 4, "Rachel Dawes");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 5, "Commissioner Gordon");
+role = Role.new
+role["movie_id"] = 3
+role["actor_id"] = 9
+role["character_name"] = "Bane"
+role.save
 
--- The Dark Knight
-INSERT INTO actors (name) VALUES ("Heath Ledger"); -- 6
-INSERT INTO actors (name) VALUES ("Aaron Eckhart"); -- 7
-INSERT INTO actors (name) VALUES ("Maggie Gyllenhaal"); -- 8
+role = Role.new
+role["movie_id"] = 3
+role["actor_id"] = 10
+role["character_name"] = "John Blake"
+role.save
 
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 1, "Bruce Wayne");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 6, "Joker");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 7, "Harvey Dent");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 2, "Alfred");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 8, "Rachel Dawes");
-
--- The Dark Knight Rises
-INSERT INTO actors (name) VALUES ("Tom Hardy"); -- 9
-INSERT INTO actors (name) VALUES ("Joseph Gordon-Levitt"); -- 10
-INSERT INTO actors (name) VALUES ("Anne Hathaway"); -- 11
-
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 1, "Bruce Wayne");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 5, "Commissioner Gordon");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 9, "Bane");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 10, "John Blake");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 11, "Selina Kyle");
+role = Role.new
+role["movie_id"] = 3
+role["actor_id"] = 11
+role["character_name"] = "Selina Kyle"
+role.save
 
 
 # Prints a header for the movies output
